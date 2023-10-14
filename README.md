@@ -2,8 +2,7 @@
 
 Group Name: Duck Duck Goose
 
-Game Name: Escape!!! (Working title subject to change)
-
+Game Name: Inspector Waddles
 
 
 Sophie - Team lead, artist, story
