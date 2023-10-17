@@ -24,7 +24,7 @@ public class playerMovement : MonoBehaviour
     {
         //Up = 'W' Key
         if (Input.GetKey(KeyCode.W))
-            if(initial.y <= 4.5)
+            if(initial.y <= 4.50)
                 initial.y = initial.y + displacement;
         //Down = 'S' Key
         if (Input.GetKey(KeyCode.S))
