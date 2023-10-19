@@ -5,8 +5,8 @@ Group Name: Duck Duck Goose
 Game Name: Inspector Waddles
 
 
-Sophie - Team lead, artist, story
+    Sophie - Team lead, artist, story
 
-Aakriti - Programmer, story
+    Aakriti - Programmer, story
 
-James - Programmer, story
+    James - Programmer, story
