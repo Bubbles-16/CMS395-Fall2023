@@ -1,5 +1,8 @@
 https://www.youtube.com/watch?v=wnaylfxGTnY
 
+How to Trigger Animation on Collision:
+https://youtu.be/npCqMT-M2EQ?si=LUJcjZ5UFJ3SI97e 
+
 Level 1
 	Individual Room Puzzles
 
