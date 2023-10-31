@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class playerMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
     public float displacement;
     Rigidbody2D player;
     Vector2 initial;
@@ -20,22 +19,21 @@ public class playerMovement : MonoBehaviour
         initial = player.transform.localPosition;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //Up = 'W' Key
+        // up = 'W' key
         if (Input.GetKey(KeyCode.W))
             if (initial.y <= 4.5)
                 initial.y = initial.y + displacement;
-        //Down = 'S' Key
+        // down = 'S' key
         if (Input.GetKey(KeyCode.S))
             if (initial.y >= -4.5)
                 initial.y = initial.y - displacement;
-        //Left = 'A' Key
+        // left = 'A' key
         if (Input.GetKey(KeyCode.A))
             if (initial.x >= -8.45)
                 initial.x = initial.x - displacement;
-        //Right = 'D' Key
+        // right = 'D' key
         if (Input.GetKey(KeyCode.D))
             if (initial.x <= 8.45)
                 initial.x = initial.x + displacement;
@@ -45,38 +43,27 @@ public class playerMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("trigger"))
-        {
+        if (collision.gameObject.CompareTag("trigger")) {
             hasCollidedWithTrigger = true;
             returnDoor.SetActive(false);
-        }
-
-        if (collision.gameObject.CompareTag("return door") && hasCollidedWithTrigger)
-        {
+        } if (collision.gameObject.CompareTag("return door") && hasCollidedWithTrigger) {
             sceneBuildIndex = 0;
             SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
-        }
-
-        if (collision.gameObject.CompareTag("door1"))
-        {
+        } if (collision.gameObject.CompareTag("door1")) {
             sceneBuildIndex = 1;
             SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
-        }
-        if (collision.gameObject.CompareTag("door2")){
+        } if (collision.gameObject.CompareTag("door2")) {
             sceneBuildIndex = 2;
             SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
-        }
-        if (collision.gameObject.CompareTag("door3")){
+        } if (collision.gameObject.CompareTag("door3")) {
             sceneBuildIndex = 3;
             SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
-        }
-        if (collision.gameObject.CompareTag("door4")){
+        } if (collision.gameObject.CompareTag("door4")) {
             sceneBuildIndex = 4;
             SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
-        }
-        if (collision.gameObject.CompareTag("door5")){
+        } if (collision.gameObject.CompareTag("door5")) {
             sceneBuildIndex = 5;
             SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
         }
-        }
+    }
 }
