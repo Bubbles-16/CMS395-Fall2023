@@ -11,12 +11,13 @@ public class playerMovement : MonoBehaviour
     Vector2 initial;
     public int sceneBuildIndex;
     public GameObject returnDoor;
+    private bool hasCollidedWithTrigger = false;
 
     void Start()
     {
         returnDoor = GetComponent<GameObject>();
         player = GetComponent<Rigidbody2D>();
-        initial = player.transform.localPosition;        
+        initial = player.transform.localPosition;
     }
 
     // Update is called once per frame
@@ -24,31 +25,40 @@ public class playerMovement : MonoBehaviour
     {
         //Up = 'W' Key
         if (Input.GetKey(KeyCode.W))
-            if(initial.y <= 4.5)
+            if (initial.y <= 4.5)
                 initial.y = initial.y + displacement;
         //Down = 'S' Key
         if (Input.GetKey(KeyCode.S))
-            if(initial.y >= -4.5)
+            if (initial.y >= -4.5)
                 initial.y = initial.y - displacement;
         //Left = 'A' Key
         if (Input.GetKey(KeyCode.A))
-            if(initial.x >= -8.45)
+            if (initial.x >= -8.45)
                 initial.x = initial.x - displacement;
         //Right = 'D' Key
         if (Input.GetKey(KeyCode.D))
-            if(initial.x <= 8.45)
+            if (initial.x <= 8.45)
                 initial.x = initial.x + displacement;
 
         player.MovePosition(initial);
-}
+    }
 
-void OnTriggerEnter2D(Collider2D collision){
-
-    
-        if (collision.gameObject.CompareTag("trigger")){
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("trigger"))
+        {
+            hasCollidedWithTrigger = true;
             returnDoor.SetActive(false);
         }
-        if (collision.gameObject.CompareTag("door1")){
+
+        if (collision.gameObject.CompareTag("return door") && hasCollidedWithTrigger)
+        {
+            sceneBuildIndex = 0;
+            SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+        }
+
+        if (collision.gameObject.CompareTag("door1"))
+        {
             sceneBuildIndex = 1;
             SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
         }
@@ -66,10 +76,6 @@ void OnTriggerEnter2D(Collider2D collision){
         }
         if (collision.gameObject.CompareTag("door5")){
             sceneBuildIndex = 5;
-            SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
-        }
-        if (collision.gameObject.CompareTag("return door")){
-            sceneBuildIndex = 0;
             SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
         }
         }
