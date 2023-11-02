@@ -5,7 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class playerMovement : MonoBehaviour
 {
+<<<<<<< Updated upstream
     public float displacement;
+=======
+    // Start is called before the first frame update
+    public float displacement = 0.0001f;
+>>>>>>> Stashed changes
     Rigidbody2D player;
     Vector2 initial;
     public int sceneBuildIndex;
@@ -49,6 +54,7 @@ public class playerMovement : MonoBehaviour
         } if (collision.gameObject.CompareTag("return door") && hasCollidedWithTrigger) {
             sceneBuildIndex = 0;
             SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+<<<<<<< Updated upstream
         } if (collision.gameObject.CompareTag("door1")) {
             sceneBuildIndex = 1;
             SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
@@ -64,6 +70,24 @@ public class playerMovement : MonoBehaviour
         } if (collision.gameObject.CompareTag("door5")) {
             sceneBuildIndex = 5;
             SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+=======
+        }
+
+        if (collision.gameObject.CompareTag("door1")){
+            SceneManager.LoadScene("room1");
+        }
+        if (collision.gameObject.CompareTag("door2")){
+            SceneManager.LoadScene("room2");
+        }
+        if (collision.gameObject.CompareTag("door3")){
+            SceneManager.LoadScene("room3");
+        }
+        if (collision.gameObject.CompareTag("door4")){
+            SceneManager.LoadScene("room4");
+        }
+        if (collision.gameObject.CompareTag("door5")){
+            SceneManager.LoadScene("room5");
+>>>>>>> Stashed changes
         }
     }
 }
