@@ -569,7 +569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca58b587596c43ba9c805a49431195d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displacement: 0.007
+  displacement: 0.009
   sceneBuildIndex: 1
   returnDoor: {fileID: 0}
 --- !u!212 &1402151120
