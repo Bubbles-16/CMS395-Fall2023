@@ -47,8 +47,7 @@ public class playerMovement : MonoBehaviour
             hasCollidedWithTrigger = true;
             returnDoor.SetActive(false);
         } if (collision.gameObject.CompareTag("return door") && hasCollidedWithTrigger) {
-            sceneBuildIndex = 0;
-            SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+            SceneManager.LoadScene("lobby");
         }
         if (collision.gameObject.CompareTag("door1")){
             SceneManager.LoadScene("room1");
