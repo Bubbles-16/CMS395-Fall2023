@@ -23,6 +23,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
+
     public void OnEndEditInput(string input)
 {
     if (Input.GetKeyDown(KeyCode.Return))
@@ -33,7 +34,7 @@ public class UIManager : MonoBehaviour
     if (input == "7193")
     {
         Debug.Log("Correct input!");
-        SceneManager.LoadScene("room2");
+        SceneManager.LoadScene("complete1");
     }
     else
     {

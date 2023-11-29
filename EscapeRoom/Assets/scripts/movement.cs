@@ -12,6 +12,7 @@ public class playerMovement : MonoBehaviour
     public GameObject returnDoor;
     private bool hasCollidedWithTrigger;
     private UIManager uiManager;
+    private UIManager2 uiManager2;
 
     void Start()
 {
@@ -28,8 +29,17 @@ public class playerMovement : MonoBehaviour
     {
         Debug.Log("UIManager found successfully.");
     }
-}
 
+    uiManager2 = FindObjectOfType<UIManager2>();
+    if (uiManager2 == null)
+    {
+        Debug.LogError("UIManager2 not found in the scene.");
+    }
+    else
+    {
+        Debug.Log("UIManager2 found successfully.");
+    }
+}
 
     void Update()
     {
@@ -53,10 +63,12 @@ public class playerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("trigger"))
         {
+            uiManager2.ShowPopUp2();
             hasCollidedWithTrigger = true;
+            Debug.LogError("UIManager2 pop up popped up.");
         }
 
-        if (collision.gameObject.CompareTag("return door"))
+        if (collision.gameObject.CompareTag("return door") && hasCollidedWithTrigger == true)
         {
             if (uiManager != null)
             {

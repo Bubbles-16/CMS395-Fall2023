@@ -19,9 +19,16 @@ public class trigger : MonoBehaviour
          
     }
 
-    void OnTriggerEnter2D(Collider2D collision){
-        if (collision.gameObject.CompareTag("player")) {
-            gameObject.SetActive(false);
-        }
+    void OnTriggerEnter2D(Collider2D collision)
+{
+    if (collision.gameObject.CompareTag("player"))
+    {
+        Invoke("DeactivateGameObject", 2f);
     }
+}
+
+void DeactivateGameObject()
+{
+    gameObject.SetActive(false);
+}
 }
