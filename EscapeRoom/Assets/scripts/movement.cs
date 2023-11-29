@@ -92,14 +92,7 @@ public class playerMovement : MonoBehaviour
     {
         SceneManager.LoadScene("room3");
     }
-    if (collision.gameObject.CompareTag("door4"))
-    {
-        SceneManager.LoadScene("room4");
-    }
-    if (collision.gameObject.CompareTag("door5"))
-    {
-        SceneManager.LoadScene("room5");
-    }
+    
 }
 
 }
