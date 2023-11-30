@@ -13,6 +13,7 @@ public class playerMovement : MonoBehaviour
     private bool hasCollidedWithTrigger;
     private UIManager uiManager;
     private UIManager2 uiManager2;
+    public Animator animator;
 
     void Start()
 {
@@ -44,17 +45,28 @@ public class playerMovement : MonoBehaviour
     void Update()
     {
         // up = 'W' key
-        if (Input.GetKey(KeyCode.W) && initial.y <= 4.5)
+        if (Input.GetKey(KeyCode.W) && initial.y <= 4.5) {
             initial.y = initial.y + displacement;
+            animator.SetFloat("speed", 1);
+        }
         // down = 'S' key
-        if (Input.GetKey(KeyCode.S) && initial.y >= -4.5)
+        else if (Input.GetKey(KeyCode.S) && initial.y >= -4.5) {
             initial.y = initial.y - displacement;
+            animator.SetFloat("speed", 1);
+            }
         // left = 'A' key
-        if (Input.GetKey(KeyCode.A) && initial.x >= -8.45)
+        else if (Input.GetKey(KeyCode.A) && initial.x >= -8.45) {
             initial.x = initial.x - displacement;
+            animator.SetFloat("speed", 1);
+        }
         // right = 'D' key
-        if (Input.GetKey(KeyCode.D) && initial.x <= 8.45)
+        else if (Input.GetKey(KeyCode.D) && initial.x <= 8.45) {
             initial.x = initial.x + displacement;
+            animator.SetFloat("speed", 1);
+        }
+        else{
+            animator.SetFloat("speed", 0);
+    }
 
         player.MovePosition(initial);
 }
