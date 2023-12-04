@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/complete1.unity
     guid: 2ed43b563746f4b11abbd07319506af7
+  - enabled: 1
+    path: Assets/Scenes/complete2.unity
+    guid: 29ecb4969718e4afb89930762def3b25
   m_configObjects: {}
