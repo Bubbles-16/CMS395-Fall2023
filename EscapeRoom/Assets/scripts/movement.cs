@@ -14,12 +14,14 @@ public class playerMovement : MonoBehaviour
     private UIManager uiManager;
     private UIManager2 uiManager2;
     public Animator animator;
+    public GameObject background;
 
     void Start()
 {
     returnDoor = GetComponent<GameObject>();
     player = GetComponent<Rigidbody2D>();
     initial = player.transform.localPosition;
+    background.SetActive(true);
 
     uiManager = FindObjectOfType<UIManager>();
     if (uiManager == null)
@@ -69,6 +71,10 @@ public class playerMovement : MonoBehaviour
     }
 
         player.MovePosition(initial);
+
+        if(hasCollidedWithTrigger){
+            background.SetActive(false);
+        }
 }
 
     void OnTriggerEnter2D(Collider2D collision)
