@@ -34,7 +34,7 @@ public class UIManager6 : MonoBehaviour
     if (input == "7463")
     {
         Debug.Log("Correct input!");
-        SceneManager.LoadScene("complete1");
+        SceneManager.LoadScene("complete3");
     }
     else
     {
