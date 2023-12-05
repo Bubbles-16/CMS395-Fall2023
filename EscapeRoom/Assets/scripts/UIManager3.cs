@@ -31,7 +31,7 @@ public class UIManager3 : MonoBehaviour
         Debug.Log("Input ended.");
     }
 
-    if (input == "FEATHER")
+    if (input == "FEATHER" || input == "feather")
     {
         Debug.Log("Correct input!");
         HidePopUp3();

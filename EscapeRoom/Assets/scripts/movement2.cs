@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class playerMovement1 : MonoBehaviour
+public class playerMovement2 : MonoBehaviour
 {
     public float displacement;
     private Rigidbody2D player;
