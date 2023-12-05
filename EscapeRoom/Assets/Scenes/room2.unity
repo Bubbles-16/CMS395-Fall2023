@@ -3008,7 +3008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb8889d930834d88bcb7dd559ad7dd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displacement: 0.007
+  displacement: 0.004
   sceneBuildIndex: 1
   returnDoor: {fileID: 0}
   animator: {fileID: 2124734860}
