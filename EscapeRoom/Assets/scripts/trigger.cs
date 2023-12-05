@@ -23,7 +23,7 @@ public class trigger : MonoBehaviour
 {
     if (collision.gameObject.CompareTag("player"))
     {
-        Invoke("DeactivateGameObject", 0.5f);
+        Invoke("DeactivateGameObject", 2f);
     }
 }
 
